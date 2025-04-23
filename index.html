@@ -114,10 +114,10 @@
     <h2>Tarifas por hora</h2>
     <table>
       <tr><th>Nº de niños</th><th>Precio</th></tr>
-      <tr><td>1 niño</td><td>25€</td></tr>
-      <tr><td>2 niños</td><td>30€</td></tr>
-      <tr><td>3 niños</td><td>35€</td></tr>
-      <tr><td>4 niños</td><td>40€</td></tr>
+      <tr><td>1 niño</td><td>20€</td></tr>
+      <tr><td>2 niños</td><td>25€</td></tr>
+      <tr><td>3 niños</td><td>30€</td></tr>
+      <tr><td>4 niños</td><td>35€</td></tr>
     </table>
 
     <div class="visual-info">
@@ -142,10 +142,10 @@
 
   <script>
     function calcularPrecio() {
-      const km = document.getElementById('distancia').value;
-      const precioExtra = km <= 2 ? 0 : (Math.ceil((km - 2) / 2) * 5);
-      document.getElementById('kmDisplay').innerText = `Distancia seleccionada: ${km} km`;
-      document.getElementById('precioExtra').innerText = `Suplemento: +${precioExtra}€`;
+    const km = document.getElementById('distancia').value;
+    const precioExtra = km <= 2 ? 0 : (Math.ceil((km - 2) / 2) * 2);  // Cambiado de 5€ a 2€
+    document.getElementById('kmDisplay').innerText = `Distancia seleccionada: ${km} km`;
+    document.getElementById('precioExtra').innerText = `Suplemento: +${precioExtra}€`;
     }
     calcularPrecio();
   </script>
