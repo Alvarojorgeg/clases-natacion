@@ -121,10 +121,10 @@
     </table>
 
     <div class="visual-info">
-      <p>📍 Las clases se imparten en la piscina del cliente.</p>
-      <p>🚗 Me desplazo hasta 10 km desde Atocha.</p>
+        <p>📍 Las clases se imparten en la <span style="color: red; background-color: #FFFF00; font-weight: bold;">PISCINA DEL CLIENTE</span>.</p>
+        <p>🚗 Me desplazo hasta 10 km desde Atocha.</p>
       <p>🟢 Gratis hasta 2 km</p>
-      <p>🔵 +5€ cada 2 km extra</p>
+      <p>🔵 +1,5€ cada kilometro extra</p>
     </div>
 
     <div class="slider-container">
@@ -141,12 +141,12 @@
   </div>
 
   <script>
-    function calcularPrecio() {
-    const km = document.getElementById('distancia').value;
-    const precioExtra = km <= 2 ? 0 : (Math.ceil((km - 2) / 2) * 2);  // Cambiado de 5€ a 2€
-    document.getElementById('kmDisplay').innerText = `Distancia seleccionada: ${km} km`;
-    document.getElementById('precioExtra').innerText = `Suplemento: +${precioExtra}€`;
-    }
+        function calcularPrecio() {
+        const km = document.getElementById('distancia').value;
+        const precioExtra = km <= 2 ? 0 : (km - 2) * 1.5;
+        document.getElementById('kmDisplay').innerText = `Distancia seleccionada: ${km} km`;
+        document.getElementById('precioExtra').innerText = `Suplemento: +${precioExtra}€`;
+        }
     calcularPrecio();
   </script>
 </body>
