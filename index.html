@@ -1,0 +1,153 @@
+<!-- Pagina hecha por Álvaro -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clases de Natación con Álvaro</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f9ff;
+      color: #003366;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #003366;
+    }
+    .tagline {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      font-weight: bold;
+      color: #000;
+    }
+    .cta {
+      background: #25d366;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      padding: 0.8rem 1.5rem;
+      margin-bottom: 2rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .cta:hover {background-color: #1ea653;}
+    table {
+      width: 100%;
+      margin-top: 1rem;
+      border-collapse: collapse;
+      background-color: #e0f7fa;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 0.8rem;
+      border: 1px solid #b2ebf2;
+    }
+    th {
+      background-color: #b2ebf2;
+      font-weight: bold;
+    }
+    .info {
+      margin-top: 2rem;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .slider-container {
+      margin-top: 2rem;
+      text-align: left;
+    }
+    .slider-container label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+    input[type=range] {
+      width: 100%;
+    }
+    .distance-display {
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: #0072ff;
+    }
+    .price-result {
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: #e65100;
+    }
+    .visual-info {
+      background: #fef3e2;
+      color: #333;
+      padding: 0.8rem 1rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+    .visual-info p {
+      margin: 0.4rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>¡Clases de Natación!</h1>
+    <div class="tagline">Verano 2025 | Clases para todas las edades y niveles 🏊‍♀️</div>
+    <button class="cta" onclick="window.open('https://wa.me/34664358773', '_blank')">¡Reserva tu clase por WhatsApp!</button>
+
+    <h2>Tarifas por hora</h2>
+    <table>
+      <tr><th>Nº de niños</th><th>Precio</th></tr>
+      <tr><td>1 niño</td><td>25€</td></tr>
+      <tr><td>2 niños</td><td>30€</td></tr>
+      <tr><td>3 niños</td><td>35€</td></tr>
+      <tr><td>4 niños</td><td>40€</td></tr>
+    </table>
+
+    <div class="visual-info">
+      <p>📍 Las clases se imparten en la piscina del cliente.</p>
+      <p>🚗 Me desplazo hasta 10 km desde Atocha.</p>
+      <p>🟢 Gratis hasta 2 km</p>
+      <p>🔵 +5€ cada 2 km extra</p>
+    </div>
+
+    <div class="slider-container">
+      <label for="distancia">¿Cuántos km estás desde Atocha?</label>
+      <input type="range" id="distancia" name="distancia" min="0" max="10" value="2" step="1" oninput="calcularPrecio()">
+      <div id="kmDisplay" class="distance-display">Distancia seleccionada: 2 km</div>
+      <div id="precioExtra" class="price-result">Suplemento: +0€</div>
+    </div>
+
+    <div class="info">
+      <h3>Profesor Álvaro</h3>
+      <p>Más de 5 años de experiencia enseñando natación de forma segura, divertida y eficaz.</p>
+    </div>
+  </div>
+
+  <script>
+    function calcularPrecio() {
+      const km = document.getElementById('distancia').value;
+      const precioExtra = km <= 2 ? 0 : (Math.ceil((km - 2) / 2) * 5);
+      document.getElementById('kmDisplay').innerText = `Distancia seleccionada: ${km} km`;
+      document.getElementById('precioExtra').innerText = `Suplemento: +${precioExtra}€`;
+    }
+    calcularPrecio();
+  </script>
+</body>
+</html>
