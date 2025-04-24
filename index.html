@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Clases de Natación con Álvaro</title>
+  <link rel="icon" type="image/x-icon" href="icon.ico">
   <style>
     * {margin: 0; padding: 0; box-sizing: border-box;}
     body {
@@ -44,17 +45,24 @@
       border: none;
       border-radius: 10px;
       padding: 0.8rem 1.5rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       cursor: pointer;
       transition: background 0.2s, box-shadow 0.2s;
       text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
     }
-
     .cta:hover {
       background-color: #1ea653;
       box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     }
-
+    .contact {
+      font-size: 0.95rem;
+      color: #003366;
+      margin-bottom: 1.5rem;
+    }
+    .contact a {
+      color: #003366;
+      text-decoration: none;
+    }
     table {
       width: 100%;
       margin-top: 1rem;
@@ -119,6 +127,13 @@
     <div class="tagline">Verano 2025 | Clases para todas las edades y niveles 🏊‍♀️</div>
     <button class="cta" onclick="window.open('https://wa.me/34664358773', '_blank')">¡Reserva tu clase por WhatsApp!</button>
 
+    <div class="contact" style="background: #fffac0; padding: 0.6rem 1rem; border-radius: 8px; margin-bottom: 1.5rem; font-family: 'Segoe UI', sans-serif;">
+      <p style="font-weight: bold; font-size: 1rem; margin: 0.4rem 0;">📱 <a href="tel:+34664358773" style="color: black; text-decoration: none;">664 35 87 73</a></p>
+      <p style="font-weight: bold; font-size: 1rem; margin: 0.4rem 0;">✉️ <a href="mailto:info@clasesnatacion.es" style="color: black; text-decoration: none;">info@clasesnatacion.es</a></p>
+    </div>
+    
+      
+
     <h2>Tarifas por hora</h2>
     <table>
       <tr><th>Nº de niños</th><th>Precio</th></tr>
@@ -129,10 +144,9 @@
     </table>
 
     <div class="visual-info">
-        <p>📍 Las clases se imparten en la <span style="color: red; background-color: #FFFF00; font-weight: bold;">PISCINA DEL CLIENTE</span>.</p>
-        <p>🚗 Me desplazo hasta 10 km desde Atocha.</p>
-      <p>🟢 Gratis hasta 2 km</p>
-      <p>🔵 +1,5€ cada kilometro extra</p>
+      <p>📍 Las clases se imparten en la <span style="color: red; background-color: #FFFF00; font-weight: bold;">PISCINA DEL CLIENTE</span>.</p>
+      <p>🧰 Desplazamiento y material gratis (hasta 2 km)</p>
+      <p>🔵 Puede aplicarse un pequeño suplemento</p>
     </div>
 
     <div class="slider-container">
@@ -153,14 +167,15 @@
       </div>
     </div>
 
-  <script>
-        function calcularPrecio() {
+    <script>
+      function calcularPrecio() {
         const km = document.getElementById('distancia').value;
         const precioExtra = km <= 2 ? 0 : (km - 2) * 1.5;
         document.getElementById('kmDisplay').innerText = `Distancia seleccionada: ${km} km`;
         document.getElementById('precioExtra').innerText = `Suplemento: +${precioExtra}€`;
-        }
-    calcularPrecio();
-  </script>
+      }
+      calcularPrecio();
+    </script>
+  </div>
 </body>
 </html>
